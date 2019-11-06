@@ -38,6 +38,7 @@ func NewS3Storage(awsAccessKey, awsSecretKey, awsRegion, endpoint, bucketName, p
 	sess := session.Must(session.NewSession())
 
 	sess.Config.S3ForcePathStyle = aws.Bool(true)
+	sess.Config.DisableRestProtocolURICleaning = aws.Bool(true)
 	sess.Config.CredentialsChainVerboseErrors = aws.Bool(true)
 	sess.Config.Region = aws.String(awsRegion)
 

@@ -38,6 +38,7 @@ type S3vStorage struct {
 func NewS3vStorage(awsAccessKey, awsSecretKey, awsRegion, endpoint, bucketName, prefix string, keysPerReq int64, retryCnt uint, retryInterval time.Duration) *S3vStorage {
 	sess := session.Must(session.NewSession())
 	sess.Config.S3ForcePathStyle = aws.Bool(true)
+	sess.Config.DisableRestProtocolURICleaning = aws.Bool(true)
 	sess.Config.CredentialsChainVerboseErrors = aws.Bool(true)
 	sess.Config.Region = aws.String(awsRegion)
 
