@@ -1,0 +1,8 @@
+#!/bin/bash
+
+./s3sync --se https://s3.museclass.com --te https://s3.museclass.com \
+--sk 76ZCPU5K5WK23RNYR63F --ss cHoUCevHLMkwtcOaZ6PUoJYKq6IIzAc7Z0gzlCVW \
+--tk 76ZCPU5K5WK23RNYR63F --ts cHoUCevHLMkwtcOaZ6PUoJYKq6IIzAc7Z0gzlCVW \
+--s3-acl copy --sync-log -p \
+s3://edu.library s3://edu.library
+
